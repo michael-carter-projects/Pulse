@@ -1,4 +1,4 @@
-# Pulse# Pulse
+# Pulse
 
 [![Build Status](https://travis-ci.com/ctrl-alt-delete-3308/pulse.svg?branch=master)](https://travis-ci.com/ctrl-alt-delete-3308/pulse)
 
