@@ -5,5 +5,7 @@ Pulse was a group project for my Software Development class. I provided the code
 Visit Pulse [here](https://csci-3308-pulse.herokuapp.com/).
 
 Login Information:
+
 username: michael
+
 password:
