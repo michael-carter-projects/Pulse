@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <title>Pulse Search Results</title>
+        <link href="resources/formatting.css" rel="stylesheet">
+        <link href="resources/background.css" rel="stylesheet">
+        <link href="resources/scroll_cards.css" rel="stylesheet">
+        <!-- <link href="resources/tweet.css" rel="stylesheet"> -->
+        <script src="resources/login.js"></script>
+        <script src="resources/search.js"></script>
+      </head>
+      <body>
+        <div id="grad_background">
+          <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="home.html">home</a>
+            <a href="my_account.html">account</a>
+            <a href="" data-toggle="modal" data-target="#modalLoginForm">login</a>
+            <a href="create_account.html">sign up</a>
+            <a href="about_pulse.html">about pulse</a>
+            <a href="pulse_team.html">our team</a>
+          </div>
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()"> &#9776</span>
+          <script>
+
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+          <!-- login modal -->
+          <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header text-center">
+                  <h4 class="modal-title w-100 font-weight-bold">sign in</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body mx-3">
+                  <div class="md-form mb-5">
+                    <i class="fas fa-envelope prefix grey-text"></i>
+                    <input type="email" id="emailLogin" class="form-control validate">
+                    <label data-error="invalid" data-success="valid" for="emailLogin">email address</label>
+                  </div>
+
+                  <div class="md-form mb-4">
+                    <i class="fas fa-lock prefix grey-text"></i>
+                    <input type="password" id="passwordLogin" class="form-control validate">
+                    <label data-error="invalid" data-success="valid" for="passwordLogin">password</label>
+                  </div>
+
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                  <button class="btn btn-default" onclick="userLogin()">login</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <p class="margin_sizing"></p> -->
+              <!-- <div class="center"> -->
+            <div class="mx-auto" style="width:98%">
+              <div class="mx-auto" style="width:20%"><img src="images/logo.png" alt="pulse logo" width="300" height="auto"></div>
+              <!-- <div class="center"><img src="images/logo.png" alt="pulse logo" width="300" height="auto"> -->
+              <div class="mx-auto" style="width:25%">
+                <p style = "font-family:allerta; font-size:26px;" id="p_search">
+                   <font color="505356">showing results for 'search_term'</font>
+                </p></div>
+                <script>
+                var seach_term = ParseURLParameter("term");
+                </script>
+                <!-- -->
+                <div class="row">
+                <div class="col-lg-3 scroll">
+                  <div class="card bg-light text-dark">
+                    <div class="card-header">Twitter</div><div class="card-body">
+                      <!-- Results will be displayed here. -->
+                      <!-- <a class="twitter-timeline" href="https://twitter.com/TwitterDev/lists/national-parks?ref_src=twsrc%5Etfw">A Twitter List by TwitterDev</a>
+                      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+                      <div id="tweet" tweetID="1157446287890894848"></div>
+
+                      <script sync src="https://platform.twitter.com/widgets.js"></script>
+
+                      <script>
+
+                      window.onload = (function(){
+
+                      var tweet = document.getElementById("tweet");
+                      var id = tweet.getAttribute("tweetID");
+
+                      twttr.widgets.createTweet(
+                        id, tweet,
+                        {
+                          conversation : 'none',    // or all
+                          cards        : 'hidden',  // or visible
+                          linkColor    : '#cc0000', // default is blue
+                          theme        : 'light'    // or dark
+                        })
+                      .then (function (el) {
+                        el.contentDocument.querySelector(".footer").style.display = "none";
+                      });
+
+                      });
+
+                      </script>
+
+                      </div>
+                      </div>
+                </div>
+
+                <div class="col-lg-3 scroll">
+                  <div class="card bg-light text-dark">
+                    <div class="card-header">Reddit</div><div class="card-body">
+                      Results will be displayed here.</div>
+                      </div>
+                </div>
+
+                <div class="col-lg-3 scroll">
+                  <div class="card bg-light text-dark">
+                    <div class="card-header">YouTube</div><div class="card-body">
+                      Results will be displayed here.</div>
+                      </div>
+                </div>
+
+                <div class="col-lg-3 scroll">
+                  <div class="card bg-light text-dark">
+                    <div class="card-header">Analytics</div><div class="card-body">
+                      Results will be displayed here.
+                      </div>
+
+                      </div>
+                </div>
+                </div>
+            </div>
+            <footer class="page-footer font-small blue">
+
+              <!-- Copyright -->
+              <div class="footer-copyright text-center py-3">© 2019 Copyright:
+                <a href="https://github.com/orgs/ctrl-alt-delete-3308/"> CTRL_ALT_DELETE</a>
+              </div>
+              <!-- Copyright -->
+
+            </footer>
+          </div>
+      </body>
+</html>
